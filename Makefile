@@ -16,7 +16,7 @@ lint-fix:
 	ruff format src/ tests/
 
 data:
-	@echo "TODO: download WANDS + run processing pipeline"
+	python -m wands.data.job
 
 eval:
 	@echo "TODO: run eval harness (MODEL=$(MODEL))"
