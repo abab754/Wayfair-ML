@@ -1,0 +1,31 @@
+# Data
+data/raw/
+data/processed/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MLflow / tracking
+mlruns/
+
+# Jupyter
+.ipynb_checkpoints/
