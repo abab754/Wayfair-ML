@@ -2,7 +2,6 @@ import math
 
 from wands.eval.metrics import dcg_at_k, idcg, mrr, ndcg_at_k, recall_at_k
 
-
 # Shared test data
 PREDICTED = [101, 102, 103, 104, 105]
 RELEVANCE = {101: 2, 102: 0, 103: 1, 104: 0, 105: 2}

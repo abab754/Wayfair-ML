@@ -35,8 +35,10 @@ def main():
     with open(out_path, "w") as f:
         json.dump(splits, f, indent=2)
 
-    print(f"Split {n} queries: train={len(splits['train'])}, "
-          f"val={len(splits['val'])}, test={len(splits['test'])}")
+    print(
+        f"Split {n} queries: train={len(splits['train'])}, "
+        f"val={len(splits['val'])}, test={len(splits['test'])}"
+    )
     print(f"Saved to {out_path}")
 
 

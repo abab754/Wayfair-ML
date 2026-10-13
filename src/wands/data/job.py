@@ -7,11 +7,10 @@ ROOT = Path(__file__).resolve().parents[3]
 RAW_DIR = str(ROOT / "data" / "raw")
 PROCESSED_DIR = str(ROOT / "data" / "processed")
 
+
 def main():
     # Step 1: Initialize SparkSession (The entrypoint to Spark)
-    spark = SparkSession.builder \
-        .appName("WANDS Search Engine") \
-        .getOrCreate()
+    spark = SparkSession.builder.appName("WANDS Search Engine").getOrCreate()
 
     # Set log level to avoid spamming the console
     spark.sparkContext.setLogLevel("WARN")
@@ -70,6 +69,7 @@ def main():
     finally:
         # Step 5: Stop the session to release cluster resources
         spark.stop()
+
 
 if __name__ == "__main__":
     main()

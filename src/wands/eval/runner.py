@@ -11,26 +11,29 @@ ROOT = Path(__file__).resolve().parents[3]
 PROCESSED_DIR = ROOT / "data" / "processed"
 RESULTS_DIR = ROOT / "results"
 
+
 def load_eval_data(split):
-    with open(f"{PROCESSED_DIR}/splits.json", 'r', encoding='utf-8') as file:
+    with open(f"{PROCESSED_DIR}/splits.json", "r", encoding="utf-8") as file:
         data = json.load(file)
 
-    query_df = pd.read_parquet(f'{PROCESSED_DIR}/queries.parquet')
-    label_df = pd.read_parquet(f'{PROCESSED_DIR}/labels.parquet')
+    query_df = pd.read_parquet(f"{PROCESSED_DIR}/queries.parquet")
+    label_df = pd.read_parquet(f"{PROCESSED_DIR}/labels.parquet")
 
     query_ids = data[split]
-    filtered_query_df = query_df[query_df['query_id'].isin(query_ids)]
-    filtered_label_df = label_df[label_df['query_id'].isin(query_ids)]
+    filtered_query_df = query_df[query_df["query_id"].isin(query_ids)]
+    filtered_label_df = label_df[label_df["query_id"].isin(query_ids)]
 
     return (filtered_query_df, filtered_label_df)
 
+
 def build_relevance(labels_df, query_id):
     res = {}
-    filtered_df = labels_df.loc[labels_df['query_id'] == query_id]
+    filtered_df = labels_df.loc[labels_df["query_id"] == query_id]
     for index, row in filtered_df.iterrows():
-        res[row['product_id']] = RELEVANCE[row['label']]
+        res[row["product_id"]] = RELEVANCE[row["label"]]
 
     return res
+
 
 def evaluate(retriever, split="val", k=10, recall_k=100):
     q_df, l_df = load_eval_data(split)
@@ -49,13 +52,15 @@ def evaluate(retriever, split="val", k=10, recall_k=100):
         elapsed = time.time() - start
         latencies.append(elapsed)
 
-        per_query.append({
-            "query_id": int(query_id),
-            "query_class": query_class,
-            "ndcg@10": ndcg_at_k(predicted_ids, relevance, k),
-            "mrr": mrr(predicted_ids, relevance),
-            "recall@100": recall_at_k(predicted_ids, relevance, recall_k),
-        })
+        per_query.append(
+            {
+                "query_id": int(query_id),
+                "query_class": query_class,
+                "ndcg@10": ndcg_at_k(predicted_ids, relevance, k),
+                "mrr": mrr(predicted_ids, relevance),
+                "recall@100": recall_at_k(predicted_ids, relevance, recall_k),
+            }
+        )
 
     # Overall averages
     overall = {
