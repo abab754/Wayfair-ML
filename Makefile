@@ -19,7 +19,7 @@ data:
 	python -m wands.data.job
 
 eval:
-	@echo "TODO: run eval harness (MODEL=$(MODEL))"
+	python -c "from wands.retrieval.bm25 import BM25Retriever; from wands.eval.runner import evaluate, save_results; r = BM25Retriever(); res = evaluate(r); res['model']='bm25'; save_results(res, 'sprint1_bm25')"
 
 serve:
 	@echo "TODO: run FastAPI locally"
