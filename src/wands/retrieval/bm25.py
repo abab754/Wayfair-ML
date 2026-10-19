@@ -22,3 +22,10 @@ class BM25Retriever:
         # Get top-k indices sorted by score descending
         top_indices = scores.argsort()[::-1][:k]
         return [self.product_ids[i] for i in top_indices]
+
+    def get_scores(self, query, product_ids):
+        """Return BM25 scores for specific product IDs."""
+        tokens = query.lower().split()
+        all_scores = self.index.get_scores(tokens)
+        pid_to_idx = {pid: i for i, pid in enumerate(self.product_ids)}
+        return {pid: float(all_scores[pid_to_idx[pid]]) for pid in product_ids if pid in pid_to_idx}

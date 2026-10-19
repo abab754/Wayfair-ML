@@ -158,4 +158,4 @@ Each sprint ends with: passing CI, an updated `results/` file, and a one-paragra
 
 ## Current sprint
 
-**Sprint 0.** Update this line as sprints complete.
+**Sprint 3 complete.** Sprints 0–3 done. Next: Sprint 4 (LLM query understanding).
