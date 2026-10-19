@@ -75,13 +75,15 @@ def stage1_candidates():
                 relevance[l_row["product_id"]] = RELEVANCE[l_row["label"]]
 
             for pid in candidates:
-                rows.append({
-                    "query_id": int(query_id),
-                    "query": query_text,
-                    "product_id": int(pid),
-                    "bm25_score": bm25_scores.get(pid, 0.0),
-                    "label": relevance.get(pid, 0),
-                })
+                rows.append(
+                    {
+                        "query_id": int(query_id),
+                        "query": query_text,
+                        "product_id": int(pid),
+                        "bm25_score": bm25_scores.get(pid, 0.0),
+                        "label": relevance.get(pid, 0),
+                    }
+                )
 
             if (i + 1) % 50 == 0:
                 print(f"  {i + 1}/{len(queries_df)} queries done")
@@ -134,14 +136,16 @@ def stage2_dense():
                     label_lookup[pid] = RELEVANCE[l_row["label"]]
 
             for pid in all_candidates:
-                all_rows.append({
-                    "query_id": int(query_id),
-                    "query": query_text,
-                    "product_id": int(pid),
-                    "bm25_score": bm25_lookup.get(pid, 0.0),
-                    "dense_score": dense_scores.get(pid, 0.0),
-                    "label": label_lookup.get(pid, 0),
-                })
+                all_rows.append(
+                    {
+                        "query_id": int(query_id),
+                        "query": query_text,
+                        "product_id": int(pid),
+                        "bm25_score": bm25_lookup.get(pid, 0.0),
+                        "dense_score": dense_scores.get(pid, 0.0),
+                        "label": label_lookup.get(pid, 0),
+                    }
+                )
 
             if (i + 1) % 50 == 0:
                 print(f"  {i + 1} queries done")
@@ -231,9 +235,9 @@ def generate_features():
     module = "wands.rerank.ltr"
 
     for stage in ["stage1", "stage2", "stage3"]:
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print(f"Running {stage} in subprocess...")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
         result = subprocess.run(
             [python, "-m", module, stage],
             cwd=ROOT,
@@ -301,6 +305,7 @@ def train():
 
 def main():
     import sys
+
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
 
     if cmd == "stage1":
