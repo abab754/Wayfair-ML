@@ -18,7 +18,6 @@ import json
 from pathlib import Path
 
 import lightgbm as lgb
-import numpy as np
 import pandas as pd
 
 from wands.eval.metrics import RELEVANCE
@@ -56,7 +55,8 @@ def stage1_candidates():
 
     for split in ["train", "val"]:
         queries_df, labels_df = load_split_data(split)
-        print(f"\nStage 1 ({split}): {len(queries_df)} queries — retrieving candidates + BM25 scores")
+        n_q = len(queries_df)
+        print(f"\nStage 1 ({split}): {n_q} queries — retrieving candidates + BM25 scores")
 
         rows = []
         for i, (_, q_row) in enumerate(queries_df.iterrows()):
@@ -95,7 +95,7 @@ def stage1_candidates():
 
 
 def stage2_dense():
-    """Load Dense retriever only. Compute dense scores for stage1 candidates + add dense-only candidates."""
+    """Load Dense retriever only. Compute dense scores for stage1 candidates."""
     from wands.retrieval.dense import DenseRetriever
 
     print("Loading Dense retriever...")
@@ -192,13 +192,16 @@ def stage3_features():
                 product_class_lower = str(p["product_class"]).lower()
 
                 if query_tokens:
-                    feat["query_token_overlap"] = len(query_tokens & search_tokens) / len(query_tokens)
-                    feat["product_name_overlap"] = len(query_tokens & name_tokens) / len(query_tokens)
+                    n_qt = len(query_tokens)
+                    feat["query_token_overlap"] = len(query_tokens & search_tokens) / n_qt
+                    feat["product_name_overlap"] = len(query_tokens & name_tokens) / n_qt
                 else:
                     feat["query_token_overlap"] = 0.0
                     feat["product_name_overlap"] = 0.0
 
-                feat["category_match"] = 1.0 if any(t in product_class_lower for t in query_tokens) else 0.0
+                feat["category_match"] = (
+                    1.0 if any(t in product_class_lower for t in query_tokens) else 0.0
+                )
                 feat["average_rating"] = float(p["average_rating"])
                 feat["review_count"] = float(p["review_count"])
                 feat["rating_count"] = float(p["rating_count"])

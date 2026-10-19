@@ -44,7 +44,8 @@ class FeatureBuilder:
         try:
             row = self.df.loc[pid]
         except KeyError:
-            return {name: 0.0 for name in FEATURE_NAMES if name not in ("bm25_score", "dense_score")}
+            skip = ("bm25_score", "dense_score")
+            return {n: 0.0 for n in FEATURE_NAMES if n not in skip}
 
         search_tokens = set(str(row["search_text"]).lower().split())
         name_tokens = set(str(row["product_name"]).lower().split())
