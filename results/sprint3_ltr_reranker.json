@@ -1,0 +1,319 @@
+{
+  "model": "hybrid_ltr_reranker",
+  "split": "val",
+  "num_queries": 72,
+  "overall": {
+    "ndcg@10": 0.7233132739123425,
+    "mrr": 0.8416953208619875,
+    "recall@100": 0.8017454551328576
+  },
+  "by_query_class": {
+    "Accent Chairs": {
+      "ndcg@10": 0.8308480341099527,
+      "mrr": 1.0,
+      "recall@100": 0.8981481481481481,
+      "count": 2
+    },
+    "Accent Pillows": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.693069306930693,
+      "count": 1
+    },
+    "Accent Stools": {
+      "ndcg@10": 0.4073174795910971,
+      "mrr": 0.5,
+      "recall@100": 0.8823529411764706,
+      "count": 1
+    },
+    "Area Rugs": {
+      "ndcg@10": 0.4349802237005952,
+      "mrr": 0.5345345345345346,
+      "recall@100": 0.9024195326278659,
+      "count": 4
+    },
+    "Bedding Sets": {
+      "ndcg@10": 0.7492861778626919,
+      "mrr": 1.0,
+      "recall@100": 0.7452364149611856,
+      "count": 2
+    },
+    "Beds": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.7107438016528925,
+      "count": 1
+    },
+    "Bike And Sport Racks": {
+      "ndcg@10": 0.9668728882728055,
+      "mrr": 1.0,
+      "recall@100": 0.9292929292929293,
+      "count": 1
+    },
+    "Bookcases": {
+      "ndcg@10": 0.5029560912583178,
+      "mrr": 1.0,
+      "recall@100": 0.7272727272727273,
+      "count": 1
+    },
+    "Cabinet and Drawer Pulls": {
+      "ndcg@10": 0.0,
+      "mrr": 0.09090909090909091,
+      "recall@100": 1.0,
+      "count": 1
+    },
+    "Candle Holders": {
+      "ndcg@10": 0.06425604298318155,
+      "mrr": 0.16666666666666666,
+      "recall@100": 0.5121951219512195,
+      "count": 1
+    },
+    "Coffee & Cocktail Tables": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.5882352941176471,
+      "count": 1
+    },
+    "Cookware Sets": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.967741935483871,
+      "count": 1
+    },
+    "Curtains & Drapes": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.7142857142857143,
+      "count": 1
+    },
+    "Deck Boxes": {
+      "ndcg@10": 0.8195942207157191,
+      "mrr": 1.0,
+      "recall@100": 0.8137254901960784,
+      "count": 1
+    },
+    "Decorative Objects": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.6993006993006993,
+      "count": 1
+    },
+    "Desks": {
+      "ndcg@10": 0.15744006533381547,
+      "mrr": 1.0,
+      "recall@100": 0.9069767441860465,
+      "count": 1
+    },
+    "Dining Chairs": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.7388059701492538,
+      "count": 1
+    },
+    "Dining Tables": {
+      "ndcg@10": 0.7238408932929756,
+      "mrr": 1.0,
+      "recall@100": 0.7827868852459017,
+      "count": 2
+    },
+    "Dressers & Chests": {
+      "ndcg@10": 0.8827655661260042,
+      "mrr": 1.0,
+      "recall@100": 0.6060954728824468,
+      "count": 3
+    },
+    "End Tables": {
+      "ndcg@10": 0.96331803895032,
+      "mrr": 1.0,
+      "recall@100": 0.7589285714285715,
+      "count": 3
+    },
+    "Floor & Wall Tile": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.905982905982906,
+      "count": 2
+    },
+    "Furniture Cushions": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.8586956521739131,
+      "count": 1
+    },
+    "Hampers & Baskets": {
+      "ndcg@10": 0.9131666643260042,
+      "mrr": 1.0,
+      "recall@100": 0.8431372549019608,
+      "count": 1
+    },
+    "Kids Desks": {
+      "ndcg@10": 0.2153829792769871,
+      "mrr": 0.16666666666666666,
+      "recall@100": 0.631578947368421,
+      "count": 1
+    },
+    "Lighting Shades": {
+      "ndcg@10": 0.4949777706723757,
+      "mrr": 0.5,
+      "recall@100": 0.9615384615384616,
+      "count": 1
+    },
+    "Log Storage": {
+      "ndcg@10": 0.6394726825628563,
+      "mrr": 1.0,
+      "recall@100": 0.7777777777777778,
+      "count": 1
+    },
+    "Office Chairs": {
+      "ndcg@10": 0.9266360779006401,
+      "mrr": 1.0,
+      "recall@100": 0.9137931034482759,
+      "count": 1
+    },
+    "Office Storage Cabinets": {
+      "ndcg@10": 0.830583126227939,
+      "mrr": 1.0,
+      "recall@100": 0.9149659863945578,
+      "count": 2
+    },
+    "Outdoor Conversation Sets": {
+      "ndcg@10": 0.4579167693680146,
+      "mrr": 0.6666666666666666,
+      "recall@100": 0.6434108527131782,
+      "count": 3
+    },
+    "Patio Bar Stools": {
+      "ndcg@10": 0.2573710349660303,
+      "mrr": 0.5,
+      "recall@100": 0.9090909090909091,
+      "count": 1
+    },
+    "Pendant Lights": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.9666666666666667,
+      "count": 1
+    },
+    "Plant & Telephone Tables": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.6923076923076923,
+      "count": 1
+    },
+    "Plates & Saucers": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.8613861386138614,
+      "count": 1
+    },
+    "Range Hoods": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.9591836734693877,
+      "count": 1
+    },
+    "Recliners": {
+      "ndcg@10": 0.44293235245680473,
+      "mrr": 0.5555555555555556,
+      "recall@100": 0.8144654088050314,
+      "count": 2
+    },
+    "Sectionals": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.7633587786259542,
+      "count": 1
+    },
+    "Sheets And Sheet Sets": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.9746835443037974,
+      "count": 1
+    },
+    "Shoe Storage": {
+      "ndcg@10": 0.5473941821847753,
+      "mrr": 1.0,
+      "recall@100": 0.9090909090909091,
+      "count": 1
+    },
+    "Shower & Tub Doors": {
+      "ndcg@10": 0.6865353960552941,
+      "mrr": 1.0,
+      "recall@100": 0.7304347826086957,
+      "count": 1
+    },
+    "Shower Heads": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.9651162790697675,
+      "count": 1
+    },
+    "Sofas": {
+      "ndcg@10": 0.3333333333333333,
+      "mrr": 0.14285714285714285,
+      "recall@100": 1.0,
+      "count": 1
+    },
+    "String Lights": {
+      "ndcg@10": 0.9895189817329358,
+      "mrr": 1.0,
+      "recall@100": 1.0,
+      "count": 1
+    },
+    "TV Stands & Entertainment Centers": {
+      "ndcg@10": 0.8196104814592204,
+      "mrr": 1.0,
+      "recall@100": 0.5882352941176471,
+      "count": 1
+    },
+    "Unknown": {
+      "ndcg@10": 0.15642624200758548,
+      "mrr": 0.14285714285714285,
+      "recall@100": 1.0,
+      "count": 1
+    },
+    "Vanities": {
+      "ndcg@10": 0.22009176629808017,
+      "mrr": 1.0,
+      "recall@100": 1.0,
+      "count": 1
+    },
+    "Vanity Lighting": {
+      "ndcg@10": 0.9668728882728055,
+      "mrr": 1.0,
+      "recall@100": 0.7461538461538462,
+      "count": 1
+    },
+    "Wall & Accent Mirrors": {
+      "ndcg@10": 0.9166118052274288,
+      "mrr": 1.0,
+      "recall@100": 0.8130271790065604,
+      "count": 2
+    },
+    "Wall Art": {
+      "ndcg@10": 0.6796713288381517,
+      "mrr": 0.6904761904761906,
+      "recall@100": 0.7853188750247574,
+      "count": 6
+    },
+    "Wall Clocks": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.5847953216374269,
+      "count": 1
+    },
+    "Wall D\u00e9cor": {
+      "ndcg@10": 0.2751736829649042,
+      "mrr": 1.0,
+      "recall@100": 0.3333333333333333,
+      "count": 1
+    },
+    "Wall Plates": {
+      "ndcg@10": 1.0,
+      "mrr": 1.0,
+      "recall@100": 0.7751937984496124,
+      "count": 1
+    }
+  },
+  "note": "Scored from cached features (candidates from hybrid BM25+dense retrieval)"
+}

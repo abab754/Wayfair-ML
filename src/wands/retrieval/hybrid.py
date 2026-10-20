@@ -5,9 +5,9 @@ DEFAULT_MODEL = "all-MiniLM-L6-v2"
 
 
 class HybridRetriever:
-    def __init__(self, rrf_k=100, dense_model=DEFAULT_MODEL):
-        self.bm25 = BM25Retriever()
-        self.dense = DenseRetriever(model_name=dense_model)
+    def __init__(self, rrf_k=100, dense_model=DEFAULT_MODEL, bm25=None, dense=None):
+        self.bm25 = bm25 or BM25Retriever()
+        self.dense = dense or DenseRetriever(model_name=dense_model)
         self.rrf_k = rrf_k
 
     def search(self, query, k=10):
